@@ -13,7 +13,6 @@ public class BaseWebElementActions {
     protected final WebDriver driver;
 
     public BaseWebElementActions(WebDriver driver, String endpoint) {
-
         this.driver = driver;
         this.endpoint = endpoint;
     }

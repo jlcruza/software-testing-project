@@ -22,4 +22,10 @@ public class IndexComposeActions extends IndexPage {
         writeInYearSearchBox(year);
         clickYearSearchButton();
     }
+
+    public void clearAllSearchbar(){
+        clickBrandClearButton();
+        clickModelClearButton();
+        clickYearClearButton();
+    }
 }

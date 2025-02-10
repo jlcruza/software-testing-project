@@ -1,5 +1,6 @@
 package org.example.tests;
 
+import org.example.compose.IndexComposeActions;
 import org.example.constants.BrowserEnum;
 import org.example.constants.TargetUrlEnum;
 import org.example.utils.DriverUtil;
@@ -14,10 +15,14 @@ public class BaseTest {
     protected WebDriver driver;
     protected String url;
 
+    protected IndexComposeActions indexComposeActions;
+
     @Before
     public void setup() {
         url = TargetUrlUtil.getUrl(targetUrl);
         driver = DriverUtil.getDriver(browser, url);
+
+        indexComposeActions = new IndexComposeActions(driver);
     }
 
     @After
