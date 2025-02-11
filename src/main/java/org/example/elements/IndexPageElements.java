@@ -3,6 +3,7 @@ package org.example.elements;
 import org.example.dto.ResultCard;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +66,24 @@ public class IndexPageElements extends BaseWebElementActions {
         return getById("popup-card-header");
     }
 
+    protected Select popupSelectBrand(){
+        return new Select(popupCardHeader());
+    }
+
     protected WebElement popupCardText() {
         return getById("popup-card-text");
+    }
+
+    protected WebElement popupCardYear() {
+        return getById("popup-card-year");
+    }
+
+    protected WebElement popupCardUpdateButton() {
+        return getById("popup-card-update-btn");
+    }
+
+    protected WebElement popupCardDeleteButton() {
+        return getById("popup-card-delete-btn");
     }
 
     protected WebElement popupCardCloseButton() {
@@ -99,6 +116,23 @@ public class IndexPageElements extends BaseWebElementActions {
         }
 
         return result;
+    }
+
+    public void clickResultCardByIndex(int index) {
+        clickElement(getCards().get(index).getButton());
+    }
+
+    public ResultCard getFirstCard() {
+        return getCards().get(0);
+    }
+
+    public ResultCard getLastCard() {
+        int length = getResultCardCount();
+        return getCards().get(length - 1);
+    }
+
+    public int getResultCardCount() {
+        return resultCardTitle().size();
     }
 
 }

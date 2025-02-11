@@ -6,7 +6,7 @@ import org.example.dto.TestDataModel;
 public class IndexTestData {
 
     public static TestDataModel getTestData1() {
-        return new TestDataModel(CarBrands.TOYOTA.toString(), "Rav4", "2019");
+        return new TestDataModel("Chevrolet", "Equinox", "2019");
     }
 
     public static TestDataModel getTestData2() {

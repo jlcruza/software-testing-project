@@ -1,5 +1,6 @@
 package org.example.tests;
 
+import org.example.compose.AddCarComposeActions;
 import org.example.compose.IndexComposeActions;
 import org.example.constants.BrowserEnum;
 import org.example.constants.TargetUrlEnum;
@@ -16,6 +17,7 @@ public class BaseTest {
     protected String url;
 
     protected IndexComposeActions indexComposeActions;
+    protected AddCarComposeActions addCarComposeActions;
 
     @Before
     public void setup() {
@@ -23,6 +25,7 @@ public class BaseTest {
         driver = DriverUtil.getDriver(browser, url);
 
         indexComposeActions = new IndexComposeActions(driver);
+        addCarComposeActions = new AddCarComposeActions(driver);
     }
 
     @After

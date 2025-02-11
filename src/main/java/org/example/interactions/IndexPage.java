@@ -48,4 +48,37 @@ public class IndexPage extends IndexPageElements {
     public void clickYearClearButton() {
         clickElement(yearClearButton());
     }
+
+    public String getPopupCarBrand()
+    {
+        return getSelectedOption(popupSelectBrand());
+    }
+    public String getPopupCarModel()
+    {
+        return getTextFromElement(popupCardText());
+    }
+    public String getPopupCarYear()
+    {
+        return getTextFromElement(popupCardYear());
+    }
+
+    public void clickPopupUpdateButton(){
+        clickElement(popupCardUpdateButton());
+    }
+
+    public void clickPopupDeleteButton(){
+        clickElement(popupCardDeleteButton());
+    }
+
+    public void selectBrandInPopup(String brand){
+        selectOptionInElement(popupCardHeader(), popupSelectBrand(), brand);
+    }
+
+    public void writeModelInPopup(String model){
+        writeInElement(popupCardText(), model);
+    }
+
+    public void writeYearInPopup(String year){
+        writeInElement(popupCardYear(), year);
+    }
 }

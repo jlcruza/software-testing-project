@@ -1,5 +1,6 @@
 package org.example.compose;
 
+import org.example.dto.TestDataModel;
 import org.example.interactions.IndexPage;
 import org.openqa.selenium.WebDriver;
 
@@ -27,5 +28,11 @@ public class IndexComposeActions extends IndexPage {
         clickBrandClearButton();
         clickModelClearButton();
         clickYearClearButton();
+    }
+
+    public void fillForm(TestDataModel newCar) {
+        selectBrandInPopup(newCar.getBrand());
+        writeInModelSearchBox(newCar.getModel());
+        writeInYearSearchBox(newCar.getYear());
     }
 }
