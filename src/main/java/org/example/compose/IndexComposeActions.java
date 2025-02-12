@@ -32,7 +32,7 @@ public class IndexComposeActions extends IndexPage {
 
     public void fillForm(TestDataModel newCar) {
         selectBrandInPopup(newCar.getBrand());
-        writeInModelSearchBox(newCar.getModel());
-        writeInYearSearchBox(newCar.getYear());
+        writeModelInPopup(newCar.getModel());
+        writeYearInPopup(newCar.getYear());
     }
 }

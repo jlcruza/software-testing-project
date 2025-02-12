@@ -44,7 +44,12 @@ public class BaseWebElementActions {
     }
 
     public String getTextFromElement(WebElement element) {
-        moveToElement(element);
+        return getTextFromElement(element, true);
+    }
+
+    public String getTextFromElement(WebElement element, boolean shouldMove) {
+        if(shouldMove)
+            moveToElement(element);
         String text = element.getText();
         return (isNullOrEmpty(text)) ? element.getDomProperty("value") : text;
     }
@@ -73,10 +78,10 @@ public class BaseWebElementActions {
 
     protected void selectOptionInElement(WebElement element, Select select, String text) {
         moveToElement(element);
-        select.selectByValue(text);
+        select.selectByVisibleText(text);
     }
 
     protected String getSelectedOption(Select select){
-        return getTextFromElement(select.getFirstSelectedOption());
+        return getTextFromElement(select.getFirstSelectedOption(), false);
     }
 }
