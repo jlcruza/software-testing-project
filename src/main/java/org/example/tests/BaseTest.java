@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
-    protected final BrowserEnum browser = BrowserEnum.CHROME;
+    protected final BrowserEnum browser = BrowserEnum.FIREFOX;
     protected final TargetUrlEnum targetUrl = TargetUrlEnum.GITHUB_PAGES;
     protected WebDriver driver;
     protected String url;

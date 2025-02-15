@@ -110,8 +110,8 @@ public class IndexPageElements extends BaseWebElementActions {
 
         for (int i = 0; i < titles.size(); i++) {
             result.add(new ResultCard(
-                    getTextFromElement(titles.get(i)),
-                    getTextFromElement(texts.get(i)),
+                    getTextFromElement(titles.get(i), false),
+                    getTextFromElement(texts.get(i), false),
                     buttons.get(i)));
         }
 
